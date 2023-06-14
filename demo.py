@@ -29,8 +29,8 @@ def run(args):
         det_phone = inferer_aux.infer_custom(frame, 0.4, 0.45, None, False, 1000)
         det_play = inferer_main.infer_custom(frame, 0.4, 0.45, None, False, 1000)
 
-        bboxes_phone, bboxes_play = det_phone[:, :4].cpu().numpy(), det_play[:, :4].cpu().numpy()
-        iogs = iogs_calc(bboxes_phone, bboxes_play)
+        bboxes_aux, bboxes_main = det_phone[:, :4].cpu().numpy(), det_play[:, :4].cpu().numpy()
+        iogs = iogs_calc(bboxes_aux, bboxes_main)
 
         if len(det_play):
             for idx, (*xyxy, conf_play, _) in enumerate(det_play):
