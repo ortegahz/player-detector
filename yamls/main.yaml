@@ -1,0 +1,4 @@
+is_coco: False
+# Classes
+nc: 1  # number of classes
+names: ['main']  # class names
