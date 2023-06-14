@@ -1,17 +1,14 @@
 import argparse
 import logging
-import cv2
-import sys
-
-import numpy as np
-
 from multiprocessing import Process, Queue
 
-from utils.decoder import process_decoder
-from utils.logging import set_logging
-from utils.ious import iogs_calc
+import cv2
+import numpy as np
 
 from core.inferer import Inferer
+from utils.decoder import process_decoder
+from utils.ious import iogs_calc
+from utils.logging import set_logging
 
 
 def run(args):
